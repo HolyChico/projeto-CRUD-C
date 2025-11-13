@@ -105,7 +105,7 @@ int main(void) {
                 break;
 
             default: // qualquer numero diferente de 0 a 7
-                printf("opcao invalida. tente novamente.\n"); // MODIFICADO
+                printf("opcao invalida. tente novamente.\n");
                 Sleep(750); //pausa de 0,75 seg
                 break;
         }
@@ -134,7 +134,7 @@ void cadastrar_livro(void) {
     Sleep(750); // pausa de 0,75 seg
 
     if (total_livros >= max_livros) {
-        printf("capacidade maxima de livros atingida.\n"); // MODIFICADO
+        printf("capacidade maxima de livros atingida.\n");  
         Sleep(750);
         return;
     }
@@ -161,7 +161,7 @@ void cadastrar_livro(void) {
     biblioteca[total_livros] = novo_livro; // adiciona o novo livro ao array
     total_livros++; // incrementa o contador de livros
 
-    printf("livro cadastrado com sucesso.\n"); // MODIFICADO
+    printf("livro cadastrado com sucesso.\n"); 
     printf("total de livros: %d\n", total_livros); 
 
     Sleep(1000); 
@@ -323,7 +323,7 @@ void consultar_livro(void) {
                 break;
 
             default: // qualquer numero diferente de 0 a 5
-                printf("opcao invalida. tente novamente.\n"); // MODIFICADO
+                printf("opcao invalida. tente novamente.\n");  
                 Sleep(750); //pausa de 0,75 seg
                 break;
         }
@@ -376,7 +376,7 @@ void atualizar_livro(void) {
         scanf("%d", &biblioteca[id_atualizar].ano_publicacao);
         limpa_buffer(); 
 
-        printf("livro atualizado com sucesso.\n"); // MODIFICADO
+        printf("livro atualizado com sucesso.\n");  
     }
     Sleep(1500); 
 }
@@ -404,7 +404,7 @@ void remover_livro(void) {
             // Remocao Logica: Apenas desativa o livro
             biblioteca[i].ativo = 0;
 
-            printf("livro removido (logicamente) com sucesso.\n"); // MODIFICADO
+            printf("livro removido (logicamente) com sucesso.\n");  
             encontrado = 1;
             break; 
         }
@@ -435,9 +435,9 @@ void emprestar_livro(void) {
             encontrado = 1;
             if (biblioteca[i].disponivel == 1) {
                 biblioteca[i].disponivel = 0; 
-                printf("livro '%s' emprestado com sucesso.\n", biblioteca[i].titulo); // MODIFICADO
+                printf("livro '%s' emprestado com sucesso.\n", biblioteca[i].titulo);  
             } else {
-                printf("livro '%s' ja esta emprestado.\n", biblioteca[i].titulo); // MODIFICADO
+                printf("livro '%s' ja esta emprestado.\n", biblioteca[i].titulo);  
             }
             break; 
         }
@@ -468,7 +468,7 @@ void devolver_livro(void) {
             encontrado = 1;
             if (biblioteca[i].disponivel == 0) { 
                 biblioteca[i].disponivel = 1; 
-                printf("livro '%s' devolvido com sucesso.\n", biblioteca[i].titulo); // MODIFICADO
+                printf("livro '%s' devolvido com sucesso.\n", biblioteca[i].titulo);  
             } else {
                 printf("livro '%s' ja estava disponivel (nao estava emprestado).\n", biblioteca[i].titulo);
             }
@@ -565,7 +565,7 @@ void gerar_relatorios(void) {
                 break;
 
             default:
-                printf("opcao invalida.\n"); // MODIFICADO
+                printf("opcao invalida.\n");  
                 Sleep(750);
                 break;
         }
@@ -616,7 +616,7 @@ void salvar_dados(void) {
     f = fopen("biblioteca.dat", "wb");
 
     if (f == NULL) {
-        printf("erro critico ao salvar dados. verifique permissoes.\n"); // MODIFICADO
+        printf("erro critico ao salvar dados. verifique permissoes.\n");  
         Sleep(2000);
         return; // sai se nao conseguir abrir/criar o arquivo
     }
